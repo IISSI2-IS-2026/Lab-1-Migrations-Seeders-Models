@@ -159,7 +159,7 @@ You will find migrations' files completed for all entities but Restaurant.
 
 ### 4.1. Complete Create Restaurant migration
 
-Please complete the code of the file `database/migrations/<timestamp>-create_restaurant.js` in order to include the Resturant entity properties (**it is mandatory to name them as it is shown in the Entity Diagram**, specifically: name, description, address, postalCode, url, restaurantCategoryId, shippingCosts, email, logo, phone, createdAt, updatedAt, userId, status). Check Sequelize documentation for [Migrations Skeleton](https://sequelize.org/master/manual/migrations.html#migration-skeleton) and [DataTypes](https://sequelize.org/v6/manual/data-types.html); alternatively, you can check the Product migration for examples.
+Please complete the code of the file `database/migrations/<timestamp>-create_restaurant.js` in order to include the Resturant entity properties (**it is mandatory to name them as it is shown in the Entity Diagram**, specifically: name, description, address, postalCode, url, restaurantCategoryId, shippingCosts, averageServiceMinutes, email, logo, phone, createdAt, updatedAt, userId, status). Check Sequelize documentation for [Migrations Skeleton](https://sequelize.org/master/manual/migrations.html#migration-skeleton) and [DataTypes](https://sequelize.org/v6/manual/data-types.html); alternatively, you can check the Product migration for examples.
 
 Keep in mind that relationships are implemented by using foreign keys. Check Restaurant relationships and define foreign key properties and how are referencing related tables. For instance, a Restaurant is related to RestarantCategory, so you may have to define the following foreign key:
 
@@ -329,6 +329,17 @@ npm run test:backend
 ```
 
 By now, only the `Get all restaurants` route is tested. We will add more tests in following labs.
+
+## Extra: Average service minutes design decision
+As you noticed, the design team opted for the persistence of the `averageServiceMinutes` in the database, even though it is a computed property derived from the restaurant orders. This decision incurs in **Denormalization**, and dalegates the computation of the averageServiceMinutes to the order delivery, as we'll cover in the next labs.
+
+Discuss:
+
+- What is **Denormalization** and what is it used for?
+- With **Denormalization**, do we have a Single Source of Truth?
+- What are the alternatives to this decision?
+- What are the pros and the cons of those approaches?
+- How can we minimize the risks linked to **Denormalization**?
 
 # References
 
