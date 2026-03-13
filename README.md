@@ -61,6 +61,11 @@ All the elements related to the backend subsystem are located in `DeliverUS-Back
 * `src/config` folder: where some global config files are stored (to run migrations and seeders from cli)
 * `src/test` folder: will store unit test requests to our Rest API, using the [SuperTest](https://www.npmjs.com/package/supertest) module.
 
+### 2.1. General working flow of the backend project:
+
+<img width="5573" height="5556" alt="lab1-diagrama" src="https://github.com/user-attachments/assets/7e90d516-be86-44ad-98e5-ffba285999f8" />
+
+
 ## 3. Inspect and run backend.js
 
 ### 3.1. Environment values
